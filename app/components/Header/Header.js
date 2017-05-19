@@ -1,11 +1,12 @@
 import React from 'react'
-import { headerContainer, logo, divider } from './styles.css'
+import { Logo } from 'components'
+import { headerContainer, divider } from './styles.css'
 
 const Header = () => (
   <header className={headerContainer}>
-    <img className={logo} src={'/assets/img/logos/toys-r-us.svg'} />
+    <Logo name={'toys-r-us'} />
     <span className={divider}></span>
-    <img className={logo} src={'/assets/img/logos/babies-r-us.svg'} />
+    <Logo name={'babies-r-us'} />
   </header>
 )
 

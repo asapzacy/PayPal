@@ -3,4 +3,8 @@
 export App from './App/App'
 
 export Header from './Header/Header'
+export Logo from './Logo/Logo'
+
+export Checkout from './Checkout/Checkout'
+export ShoppingCart from './ShoppingCart/ShoppingCart'
 export Wallet from './Wallet/Wallet'

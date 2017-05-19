@@ -10,6 +10,9 @@
 
 .innerContainer {
   width:60%;
+  height:60%;
   display:flex;
+  justify-content:space-between;
   flex-direction:column;
+
 }
