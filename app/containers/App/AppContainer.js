@@ -9,7 +9,7 @@ class AppContainer extends Component {
     }
   }
   componentDidMount() {
-
+    console.log('hi')
   }
   render() {
     return <App {...this.state} />

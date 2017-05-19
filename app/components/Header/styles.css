@@ -1,0 +1,19 @@
+
+.headerContainer {
+  width:60%;
+  height:4.2em;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo {
+  height:80%;
+}
+
+.divider {
+  display:block;
+  height:100%;
+  width:2px;
+  background:#bdbdbd;
+}

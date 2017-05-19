@@ -1,7 +1,14 @@
 import React from 'react'
+import { Header, Wallet } from 'components'
+import { appContainer, innerContainer } from './styles.css'
 
 const App = () => (
-  <span>{'App'}</span>
+  <div className={appContainer}>
+    <main className={innerContainer}>
+      <Header />
+      <Wallet />
+    </main>
+  </div>
 )
 
 export default App
