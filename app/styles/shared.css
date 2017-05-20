@@ -4,8 +4,22 @@
 }
 
 .paymentsHeader {
-  height:12%;
+  text-align:center;
+  border-bottom:1px solid #bdbdbd;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  flex-wrap:wrap;
+  padding:1em 0.5em;
+}
+
+.paymentsIcon {
+  font-size:2em;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.paymentsHeading {
+  flex:1;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Header, ShoppingCart } from 'components'
 import { CheckoutContainer } from 'containers'
+import { getUserInfo } from 'helpers/api'
 import { mainContainer, innerContainer, checkoutContainer } from './styles.css'
 
 class MainContainer extends Component {
@@ -8,12 +9,25 @@ class MainContainer extends Component {
     super()
     this.state = {
       name: '',
-      price: 0
+      price: 0,
+      payments: []
     }
   }
   componentDidMount() {
+    this.makeRequest()
     console.log('hi')
-    this.setState({ name: 'zac', price: 100 })
+  }
+  makeRequest() {
+    console.log('make request')
+    getUserInfo()
+      .then((info) => {
+        this.setState({
+          name: info.name,
+          price: info.price,
+          payments: info.payments
+        })
+      })
+      .catch(e => console.log(e))
   }
   render() {
     return (

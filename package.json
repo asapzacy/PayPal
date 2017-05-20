@@ -4,11 +4,12 @@
   "description": "A PayPal Applications Engineer coding challenge.",
   "main": "server.js",
   "scripts": {
-    "start": "env UV_THREADPOOL_SIZE=100 webpack-dev-server --progress --colors",
+    "react": "env UV_THREADPOOL_SIZE=100 webpack-dev-server --progress --colors",
+    "node": "nodemon server",
+    "start": "yarn react | yarn node",
     "wake": "atom . && open http://localhost:8080 && yarn start",
     "build": "webpack -p --progress --colors",
     "clean": "rm -rf node_modules && yarn",
-    "node": "node server.js",
     "lint": "eslint app/.; exit 0",
     "fix": "eslint --fix app/.; exit 0",
     "images": "find ./dist/assets -name '*.svg' -type f -exec svgo '{}' \\;"
@@ -18,7 +19,9 @@
   "dependencies": {
     "axios": "^0.15.3",
     "compression": "^1.6.2",
+    "cors": "^2.8.3",
     "express": "^4.14.1",
+    "nodemon": "^1.11.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-icons": "^2.2.3",

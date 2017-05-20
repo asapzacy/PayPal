@@ -12,7 +12,7 @@ class WalletContainer extends Component {
 
   }
   render() {
-    return <Wallet {...this.state} />
+    return <Wallet {...this.state} {...this.props} />
   }
 }
 
