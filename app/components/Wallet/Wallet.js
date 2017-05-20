@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { Payment } from 'components'
 import Close from 'react-icons/lib/io/ios-close-empty'
 import Add from 'react-icons/lib/io/ios-plus-empty'
 import ArrowRight from 'react-icons/lib/io/ios-arrow-right'
 import { walletContainer, walletHeader, walletMain,
-  updatePaymentsContainer, updatePayment } from './styles.css'
+  updatePaymentsContainer, updatePayment, paymentsList } from './styles.css'
 import { paymentsIcon, paymentsHeading } from 'styles/shared.css'
 
 const Wallet = ({ payments }) => (
@@ -19,7 +20,9 @@ const Wallet = ({ payments }) => (
       </section>
     </header>
     <main className={walletMain}>
-      { payments.map((el, i) => <span key={i}>{el.first}</span>) }
+      <ul className={paymentsList}>
+        { payments.map((el, i) => <Payment {...el} isPreferred={i === 0} key={i} />) }
+      </ul>
     </main>
   </section>
 )

@@ -1,6 +1,7 @@
 
 .paymentsContainer {
   flex:4;
+  overflow:auto;
 }
 
 .paymentsHeader {
