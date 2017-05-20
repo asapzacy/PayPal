@@ -1,0 +1,11 @@
+
+.paymentsContainer {
+  flex:4;
+}
+
+.paymentsHeader {
+  height:12%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}

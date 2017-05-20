@@ -1,5 +1,4 @@
-import React from 'react'
 import { render } from 'react-dom'
-import { AppContainer } from 'containers'
+import routes from './config/routes'
 
-render(<AppContainer />, document.getElementById('app'))
+render(routes, document.getElementById('app'))

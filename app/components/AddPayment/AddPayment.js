@@ -1,11 +1,14 @@
 import React from 'react'
+import ArrowLeft from 'react-icons/lib/io/ios-arrow-left'
+import { addPaymentContainer, addPaymentHeader } from './styles.css'
+import { paymentHeader } from 'styles/shared.css'
 
 const AddPayment = ({ switchPanel, updatePaymentInfo, addPayment, ...props }) =>{
   console.log(props)
   return (
-  <section>
-    <header>
-      <span onClick={() => switchPanel('wallet')}>{'<'}</span>
+  <section className={addPaymentContainer}>
+    <header className={paymentHeader}>
+      <span onClick={() => switchPanel('wallet')}><ArrowLeft /></span>
       <h2>{'Add debit or credit card'}</h2>
     </header>
     <main>

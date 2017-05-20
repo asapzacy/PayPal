@@ -1,6 +1,8 @@
 
 /* -------  main container  ------- */
-export AppContainer from './App/AppContainer'
+export MainContainer from './Main/MainContainer'
+
+export WalletContainer from './Wallet/WalletContainer'
 
 export CheckoutContainer from './Checkout/CheckoutContainer'
 
