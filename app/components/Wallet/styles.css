@@ -4,5 +4,19 @@
 }
 
 .walletHeader {
-  
+  display:flex;
+  justify-content:space-between;
+
+}
+
+.walletMain {
+
+}
+
+.updatePaymentsContainer {
+
+}
+
+.updatePayment {
+
 }

@@ -1,9 +1,13 @@
 
 .checkoutContainer {
   width:100%;
-  border:1px solid #e0e0e0;
+  border:1px solid #bdbdbd;
   border-radius:6px;
   flex:1;
   display:flex;
   margin:1em 0;
+}
+
+.checkout {
+  flex:4;
 }

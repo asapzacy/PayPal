@@ -1,12 +1,13 @@
 import React from 'react'
-import { Header, Wallet, ShoppingCart, Checkout } from 'components'
+import { Header, Checkout } from 'components'
+import { CheckoutContainer } from 'containers'
 import { appContainer, innerContainer } from './styles.css'
 
 const App = () => (
   <div className={appContainer}>
     <main className={innerContainer}>
       <Header />
-      <Checkout />
+      <CheckoutContainer />
     </main>
   </div>
 )

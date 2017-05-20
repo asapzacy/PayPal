@@ -5,5 +5,36 @@
 }
 
 .shoppingCartHeader {
+  height:20%;
+  padding:1.5em 3em;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+}
+.shoppingCartHeader::after {
+  content:'';
+  width:80%;
+  height:1px;
+  margin:0 auto;
+  display:block;
+  background:#bdbdbd;
+  position:absolute;
+  bottom:0;right:0;left:0;
+}
 
+.shoppingCartMain {
+  padding:1.5em 3em;
+}
+
+.welcomeMessage {
+  margin-bottom:3em;
+}
+.shoppingCartTotal {
+  font-weight:600;
+}
+
+.cartIcon {
+  font-size:1.2em;
+  margin:0 0.6em 0.2em 0;
 }
