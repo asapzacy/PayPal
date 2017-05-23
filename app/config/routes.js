@@ -7,6 +7,7 @@ const routes = (
     <Route path='/' component={MainContainer}>
       <IndexRoute component={WalletContainer} />
       <Route path='/addPayment' component={AddPaymentContainer} />
+      <Route path='/managePayment/:paymentId' component={AddPaymentContainer} />
     </Route>
   </Router>
 )

@@ -24,7 +24,6 @@ class CheckoutContainer extends Component {
     this.addPayment(fakeData)
   }
   addPayment(newPayment) {
-    console.log('ay', newPayment)
     const copy = [ ...this.state.payments ]
     copy.push(newPayment)
     this.setState({ payments: copy })

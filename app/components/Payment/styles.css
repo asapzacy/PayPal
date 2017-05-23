@@ -21,13 +21,14 @@
 .paymentType {
   display:inline-block;
 }
-.paymentCc {
+.paymentNumber {
   display:inline-block;
   margin-left:0.5em;
 }
 .paymentPreferred {
   color:#4d4d4d;
   font-size:0.8em;
+  line-height:1;
 }
 .checkmarkContainer {
   color:#3c8ac7;

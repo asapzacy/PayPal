@@ -1,1 +1,1 @@
-# paypal
+# PayPal

@@ -10,24 +10,28 @@ class MainContainer extends Component {
     this.state = {
       name: '',
       price: 0,
-      payments: []
+      payments: [],
+      preferredPayment: 0
     }
+    this.updatePreferredPayment = this.updatePreferredPayment.bind(this)
   }
   componentDidMount() {
     this.makeRequest()
-    console.log('hi')
   }
   makeRequest() {
-    console.log('make request')
     getUserInfo()
       .then((info) => {
         this.setState({
           name: info.name,
           price: info.price,
-          payments: info.payments
+          payments: info.payments,
+          preferredPayment: info.payments.length ? 3 : 0
         })
       })
       .catch(e => console.log(e))
+  }
+  updatePreferredPayment(id) {
+    this.setState({ preferredPayment: id })
   }
   render() {
     return (
@@ -35,7 +39,11 @@ class MainContainer extends Component {
         <main className={innerContainer}>
           <Header />
           <section className={checkoutContainer}>
-            { React.cloneElement(this.props.children, {...this.state}) }
+            { React.cloneElement(this.props.children, {
+                updatePreferredPayment: this.updatePreferredPayment,
+                ...this.state
+              })
+            }
             <ShoppingCart {...this.state} />
           </section>
         </main>
@@ -43,5 +51,6 @@ class MainContainer extends Component {
     )
   }
 }
+// { React.cloneElement(this.props.children, {...this.state}, this.updatePreferredPayment={this.updatePreferredPayment}) }
 
 export default MainContainer
