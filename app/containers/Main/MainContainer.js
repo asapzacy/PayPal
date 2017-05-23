@@ -51,6 +51,5 @@ class MainContainer extends Component {
     )
   }
 }
-// { React.cloneElement(this.props.children, {...this.state}, this.updatePreferredPayment={this.updatePreferredPayment}) }
 
 export default MainContainer
