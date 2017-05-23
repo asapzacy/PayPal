@@ -1,11 +1,19 @@
 
 .paymentItem {
-  height:4.2em;
+  height:4.5em;
   padding:0 1em;
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:height 0.22s;
+  transition:height 0.22s,background-color 0.44s;
+}
+.paymentItemActive {
+  background-color:#fff;
+  cursor:pointer;
+  composes:paymentItem;
+}
+.paymentItemActive:hover {
+  background-color:initial;
 }
 
 .paymentItem:not(:last-child) {

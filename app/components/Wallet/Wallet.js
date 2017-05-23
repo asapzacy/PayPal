@@ -8,7 +8,7 @@ import { walletContainer, walletHeader, walletMain,
   updatePaymentsContainer, updatePayment, paymentsList } from './styles.css'
 import { paymentsIcon, paymentsHeading } from 'styles/shared.css'
 
-const Wallet = ({ payments, preferredPayment, updatePreferredPayment }) => (
+const Wallet = ({ payments, preferredPayment, updatePreferredPayment, isPaymentChanging }) => (
   <section className={walletContainer}>
     <header className={walletHeader}>
       <span className={paymentsIcon}></span>
@@ -23,8 +23,9 @@ const Wallet = ({ payments, preferredPayment, updatePreferredPayment }) => (
       <ul className={paymentsList}>
         { payments.map((el, i) => <Payment {...el}
                                     id={i}
-                                    isPreferred={(i + 1) === preferredPayment}
+                                    isPreferred={i === preferredPayment}
                                     updatePreferredPayment={updatePreferredPayment}
+                                    isPaymentChanging={isPaymentChanging}
                                     key={i}
                                   />
         )}

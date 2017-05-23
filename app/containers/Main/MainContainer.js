@@ -11,9 +11,11 @@ class MainContainer extends Component {
       name: '',
       price: 0,
       payments: [],
-      preferredPayment: 0
+      preferredPayment: 0,
+      isPaymentChanging: false
     }
     this.updatePreferredPayment = this.updatePreferredPayment.bind(this)
+    this.changePaymentMethod = this.changePaymentMethod.bind(this)
   }
   componentDidMount() {
     this.makeRequest()
@@ -25,13 +27,18 @@ class MainContainer extends Component {
           name: info.name,
           price: info.price,
           payments: info.payments,
-          preferredPayment: info.payments.length ? 3 : 0
+          preferredPayment: 0
         })
       })
       .catch(e => console.log(e))
   }
   updatePreferredPayment(id) {
-    this.setState({ preferredPayment: id })
+    this.setState({ preferredPayment: id }, () => {
+      this.changePaymentMethod()
+    })
+  }
+  changePaymentMethod() {
+    this.setState({ isPaymentChanging: !this.state.isPaymentChanging })
   }
   render() {
     return (
@@ -44,7 +51,7 @@ class MainContainer extends Component {
                 ...this.state
               })
             }
-            <ShoppingCart {...this.state} />
+            <ShoppingCart {...this.state} changePaymentMethod={this.changePaymentMethod} />
           </section>
         </main>
       </div>

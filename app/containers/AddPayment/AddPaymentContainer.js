@@ -15,7 +15,8 @@ class AddPaymentContainer extends Component {
     this.updatePaymentInfo = this.updatePaymentInfo.bind(this)
   }
   componentDidMount() {
-    const paymentId = Number(this.props.params.paymentId) - 1
+    // const paymentId = Number(this.props.params.paymentId) - 1
+    const paymentId = parseInt(this.props.params.paymentId)
     if (Number.isInteger(paymentId)) {
       this.editPaymentInfo(this.props.payments[paymentId])
     }
