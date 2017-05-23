@@ -20,7 +20,7 @@ const ShoppingCart = ({ price, name, payments, preferredPayment, changePaymentMe
           {'change'}
           { isPaymentChanging ? <Close /> : <ArrowRight /> }
         </span>
-        { payments[preferredPayment] && <Payment {...payments[preferredPayment]} /> }
+        { payments[preferredPayment] && <Payment {...payments[preferredPayment]} isPreferred={true} /> }
         <Total price={price} />
       </section>
     </main>

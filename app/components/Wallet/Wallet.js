@@ -11,9 +11,7 @@ import { paymentsIcon, paymentsHeading } from 'styles/shared.css'
 const Wallet = ({ payments, preferredPayment, updatePreferredPayment, isPaymentChanging }) => (
   <section className={walletContainer}>
     <header className={walletHeader}>
-      <span className={paymentsIcon}></span>
       <h2 className={paymentsHeading}>{'Wallet'}</h2>
-      <span className={paymentsIcon}><Close /></span>
       <section className={updatePaymentsContainer}>
         <Link to='/addPayment' className={updatePayment}><Add />{'Add'}</Link>
         <Link to={`/managePayment/${preferredPayment}`} className={updatePayment}>{'Manage'}<ArrowRight /></Link>
