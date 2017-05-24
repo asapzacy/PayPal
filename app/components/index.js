@@ -11,3 +11,4 @@ export Wallet from './Wallet/Wallet'
 
 export Payment from './Payment/Payment'
 export AddPayment from './AddPayment/AddPayment'
+export Input from './Input/Input'

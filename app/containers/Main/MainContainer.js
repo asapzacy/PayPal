@@ -15,6 +15,7 @@ class MainContainer extends Component {
       isPaymentChanging: false
     }
     this.updatePreferredPayment = this.updatePreferredPayment.bind(this)
+    this.updatePayment = this.updatePayment.bind(this)
     this.changePaymentMethod = this.changePaymentMethod.bind(this)
   }
   componentDidMount() {
@@ -37,6 +38,13 @@ class MainContainer extends Component {
       this.changePaymentMethod()
     })
   }
+  updatePayment(updatedPaymentInfo, index) {
+    const copy = [ ...this.state.payments ]
+    console.log(this.state.payments, index)
+    copy[index] = updatedPaymentInfo
+    console.log(copy, index)
+    this.setState({ payments: copy },() => console.log(this.state.payments[index]))
+  }
   changePaymentMethod() {
     this.setState({ isPaymentChanging: !this.state.isPaymentChanging })
   }
@@ -48,6 +56,7 @@ class MainContainer extends Component {
           <section className={checkoutContainer}>
             { React.cloneElement(this.props.children, {
                 updatePreferredPayment: this.updatePreferredPayment,
+                updatePayment: this.updatePayment,
                 ...this.state
               })
             }

@@ -3,7 +3,7 @@ import Checkmark from 'react-icons/lib/io/ios-checkmark-empty'
 import { paymentItem, paymentItemActive, paymentIcon, paymentInfo, paymentType,
   paymentNumber, paymentPreferred, checkmarkContainer } from './styles.css'
 
-const Payment = ({ cc, type, isPreferred, updatePreferredPayment, id, isPaymentChanging }) => (
+const Payment = ({ cc, type = 'Visa', isPreferred, updatePreferredPayment, id, isPaymentChanging }) => (
   <li className={isPaymentChanging ? paymentItemActive : paymentItem} onClick={() => updatePreferredPayment(id)} style={{height:isPreferred && '6em'}}>
     <img className={paymentIcon} src={`/assets/icons/${type.toLowerCase()}.svg`} alt={type} />
     <span className={paymentInfo}>
