@@ -1,17 +1,19 @@
 
 /* -------  Input  ------- */
 .inputContainer {
-  width:50%;
-  background:#fff;
+  width:45%;
+  margin:2.5%;
   position:relative;
   display:flex;
   align-items:center;
-  min-width:225px;
-  max-width:425px;
 }
 .search {
-  height:4em;
+  height:2.8em;
   width:100%;
+  padding:0 0.8em;
+  border:1px solid #070707;
+  background:#fff;
+  border-radius:3px;
 }
 .underline {
   display:block;

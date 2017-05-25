@@ -1,7 +1,7 @@
 import React from 'react'
 import { CheckoutHeader, CreditCard, Input } from 'components'
 import { paymentsContainer, paymentsHeader, paymentsIcon, paymentsHeading } from 'styles/shared.css'
-import { editPaymentContainer, creditCardsContainer } from './styles.css'
+import { editPaymentContainer, paymentInfoContainer, creditCardsContainer } from './styles.css'
 
 const EditPayment = ({ preferredPaymentId, updatePaymentInfo, updatePaymentCard, savePaymentInfo, buttonText = 'Save', isPaymentSaved, ...props }) => {
   const newPaymentMethod = {
@@ -16,7 +16,7 @@ const EditPayment = ({ preferredPaymentId, updatePaymentInfo, updatePaymentCard,
   return (
     <section className={editPaymentContainer}>
       <CheckoutHeader text={'Add debit or credit card'} />
-      <main className={null}>
+      <main className={paymentInfoContainer}>
         <Input text={'first'} value={newPaymentMethod.first} updatePaymentInfo={updatePaymentInfo} />
         <Input text={'last'} value={newPaymentMethod.last} updatePaymentInfo={updatePaymentInfo} />
         <section className={creditCardsContainer}>
