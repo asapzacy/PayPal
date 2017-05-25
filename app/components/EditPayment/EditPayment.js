@@ -3,8 +3,15 @@ import { CheckoutHeader, CreditCard, Input } from 'components'
 import { paymentsContainer, paymentsHeader, paymentsIcon, paymentsHeading } from 'styles/shared.css'
 import { editPaymentContainer } from './styles.css'
 
-const EditPayment = ({ card, preferredPaymentId, updatePaymentInfo, updateCardType, savePaymentMethod, buttonText = 'Save', isPaymentSaved }) => {
-  const newPaymentMethod = Object.assign({}, card)
+const EditPayment = ({ preferredPaymentId, updatePaymentInfo, updatePaymentCard, savePaymentInfo, buttonText = 'Save', isPaymentSaved, ...props }) => {
+  const newPaymentMethod = {
+    first: props.first,
+    last: props.last,
+    type: props.type,
+    cc: props.cc,
+    expiration: props.expiration,
+    csc: props.csc
+  }
   const creditCards = ['Visa', 'Amex', 'Mastercard', 'Discover']
   return (
     <section className={editPaymentContainer}>
@@ -17,7 +24,7 @@ const EditPayment = ({ card, preferredPaymentId, updatePaymentInfo, updateCardTy
             <CreditCard
               card={el}
               isActive={newPaymentMethod.type === el}
-              updateCardType={updateCardType}
+              updatePaymentCard={() => updatePaymentCard(el)}
               key={i}
             />)
           )}
@@ -25,7 +32,7 @@ const EditPayment = ({ card, preferredPaymentId, updatePaymentInfo, updateCardTy
         <Input text={'cc'} value={newPaymentMethod.cc} updatePaymentInfo={updatePaymentInfo} />
         <Input text={'expiration'} value={newPaymentMethod.expiration} updatePaymentInfo={updatePaymentInfo} />
         <Input text={'csc'} value={newPaymentMethod.csc} updatePaymentInfo={updatePaymentInfo} />
-        <button onClick={(e) => savePaymentMethod(preferredPaymentId, newPaymentMethod)}>{isPaymentSaved ? `${buttonText === 'Save' ? 'Saved' : 'Added'}` : buttonText}</button>
+        <button onClick={(e) => savePaymentInfo(preferredPaymentId, newPaymentMethod)}>{isPaymentSaved ? `${buttonText === 'Save' ? 'Saved' : 'Added'}` : buttonText}</button>
       </main>
     </section>
   )

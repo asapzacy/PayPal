@@ -6,7 +6,7 @@ const Input = ({ text, value, updatePaymentInfo }) => (
     <input
       className={search}
       value={value}
-      type='text'
+      type={'text'}
       onChange={(e) => updatePaymentInfo(text, e)}
       spellCheck={false}
       placeholder={text}

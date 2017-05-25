@@ -6,14 +6,12 @@ class EditPaymentContainer extends Component {
     super()
     this.state = {
       isPaymentSaved: false,
-      card: {
-        first: '',
-        last: '',
-        type: '',
-        cc: '',
-        expiration: '',
-        csc: ''
-      }
+      first: '',
+      last: '',
+      type: '',
+      cc: '',
+      expiration: '',
+      csc: ''
     }
     this.updatePaymentInfo = this.updatePaymentInfo.bind(this)
     this.updatePaymentCard = this.updatePaymentCard.bind(this)
@@ -37,18 +35,16 @@ class EditPaymentContainer extends Component {
   //  if card exists --> fill in all form inputs
   fillInPaymentInfo(paymentInfo) {
     this.setState({
-      card: {
-        first: paymentInfo.first,
-        last: paymentInfo.last,
-        type: paymentInfo.type,
-        cc: paymentInfo.cc,
-        expiration: paymentInfo.expiration,
-        csc: paymentInfo.csc
-      }
+      first: paymentInfo.first,
+      last: paymentInfo.last,
+      type: paymentInfo.type,
+      cc: paymentInfo.cc,
+      expiration: paymentInfo.expiration,
+      csc: paymentInfo.csc
     })
   }
   savePaymentInfo(index, newPayment) {
-    this.props.updatePayment(index, newPayment)
+    this.props.updatePaymentMethod(index, newPayment)
     this.setState({ isPaymentSaved: true })
   }
   updatePaymentInfo(cardInfo, event) {
