@@ -12,6 +12,7 @@
 .paymentInfoContainer {
   display:flex;
   flex-wrap:wrap;
+  padding:1em 0.5em;
 }
 .paymentInfoContainer div:nth-child(4) {
   width:100%;

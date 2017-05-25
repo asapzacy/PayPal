@@ -29,10 +29,12 @@ const EditPayment = ({ preferredPaymentId, updatePaymentInfo, updatePaymentCard,
             />)
           )}
         </section>
-        <Input text={'cc'} value={newPaymentMethod.cc} updatePaymentInfo={updatePaymentInfo} />
+        <Input text={'cc'} value={newPaymentMethod.cc} updatePaymentInfo={updatePaymentInfo} iconType={newPaymentMethod.type} />
         <Input text={'expiration'} value={newPaymentMethod.expiration} updatePaymentInfo={updatePaymentInfo} />
-        <Input text={'csc'} value={newPaymentMethod.csc} updatePaymentInfo={updatePaymentInfo} />
-        <button onClick={(e) => savePaymentInfo(preferredPaymentId, newPaymentMethod)}>{isPaymentSaved ? `${buttonText === 'Save' ? 'Saved' : 'Added'}` : buttonText}</button>
+        <Input text={'csc'} value={newPaymentMethod.csc} updatePaymentInfo={updatePaymentInfo} iconType={'csc'} />
+        <button onClick={(e) => savePaymentInfo(preferredPaymentId, newPaymentMethod)}>
+          { isPaymentSaved ? `${buttonText === 'Save' ? 'Saved' : 'Added'}` : buttonText}
+        </button>
       </main>
     </section>
   )

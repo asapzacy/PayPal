@@ -7,25 +7,35 @@
   display:flex;
   align-items:center;
 }
-.search {
-  height:2.8em;
+.inputSearch {
+  height:2.5em;
   width:100%;
-  padding:0 0.8em;
+  padding:0 0.75em;
   border:1px solid #070707;
   background:#fff;
   border-radius:3px;
 }
-.underline {
+.inputUnderline {
   display:block;
-  height:2px;width:0;
+  height:4px;width:0;
   position:absolute;
   bottom:0;left:0;right:0;
   margin:0 auto;
   opacity:0;
   background:#121212;
-  transition:opacity 0.22s, width 0.22s;
+  border-radius:0 0 100% 100%;
+  transition:opacity 0.22s,width 0.22s;
 }
-.search:focus ~ .underline {
+.inputSearch:focus ~ .inputUnderline {
   width:100%;
   opacity:1;
+}
+.inputIcon {
+  height:100%;
+  width:2em;
+  position:absolute;
+  right:1em;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center center;
 }

@@ -1,17 +1,18 @@
 import React from 'react'
-import { inputContainer, search, underline } from './styles.css'
+import { inputContainer, inputSearch, inputIcon, inputUnderline } from './styles.css'
 
-const Input = ({ text, value, updatePaymentInfo }) => (
+const Input = ({ text, value, updatePaymentInfo, iconType }) => (
   <div className={inputContainer}>
     <input
-      className={search}
+      className={inputSearch}
       value={value}
       type={'text'}
       onChange={(e) => updatePaymentInfo(text, e)}
       spellCheck={false}
       placeholder={text}
     />
-    <span className={underline}></span>
+    { iconType && <span className={inputIcon} style={{backgroundImage:`url(http://localhost:8080/assets/icons/${iconType}.svg)`}}></span>}
+    <span className={inputUnderline}></span>
   </div>
 )
 
