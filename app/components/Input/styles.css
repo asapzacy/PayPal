@@ -1,12 +1,29 @@
 
+/* -------  Input  ------- */
 .inputContainer {
-
+  width:50%;
+  background:#fff;
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-width:225px;
+  max-width:425px;
 }
-
 .search {
-
+  height:4em;
+  width:100%;
 }
-
 .underline {
-  
+  display:block;
+  height:2px;width:0;
+  position:absolute;
+  bottom:0;left:0;right:0;
+  margin:0 auto;
+  opacity:0;
+  background:#121212;
+  transition:opacity 0.22s, width 0.22s;
+}
+.search:focus ~ .underline {
+  width:100%;
+  opacity:1;
 }

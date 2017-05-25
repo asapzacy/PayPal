@@ -1,6 +1,20 @@
 
 .walletContainer {
-  composes:paymentsContainer from 'styles/shared.css';
+  composes:leftSideContainer from 'styles/shared.css';
+}
+
+.updatePaymentNav {
+  width:100%;
+  margin-top:1em;
+  display:flex;
+  justify-content:space-between;
+}
+.updatePaymentLink {
+  display:flex;
+  align-items:center;
+  color:#3c8ac7;
+  font-weight:500;
+  line-height:1;
 }
 
 .walletHeader {

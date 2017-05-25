@@ -1,23 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { Payment } from 'components'
+import { CheckoutHeader, Payment } from 'components'
 import Close from 'react-icons/lib/io/ios-close-empty'
 import Add from 'react-icons/lib/io/ios-plus-empty'
 import ArrowRight from 'react-icons/lib/io/ios-arrow-right'
-import { walletContainer, walletHeader, walletMain,
-  updatePaymentsContainer, updatePayment, paymentsList } from './styles.css'
-import { paymentsIcon, paymentsHeading } from 'styles/shared.css'
+import { walletContainer, updatePaymentNav, updatePaymentLink, walletMain, updatePayment, paymentsList } from './styles.css'
 
 const Wallet = ({ paymentMethods, preferredPaymentId, updatePreferredPayment,
 isPaymentMethodBeingUpdated }) => (
   <section className={walletContainer}>
-    <header className={walletHeader}>
-      <h2 className={paymentsHeading}>{'Wallet'}</h2>
-      <section className={updatePaymentsContainer}>
-        <Link to='/addPayment' className={updatePayment}><Add />{'Add'}</Link>
-        <Link to={`/managePayment/${preferredPaymentId}`} className={updatePayment}>{'Manage'}<ArrowRight /></Link>
-      </section>
-    </header>
+    <CheckoutHeader text={'Wallet'}>
+    <nav className={updatePaymentNav}>
+      <Link to={'/addPayment'} className={updatePaymentLink}>
+        <Add />{'Add'}
+      </Link>
+      <Link to={`/managePayment/${preferredPaymentId}`} className={updatePaymentLink}>
+        {'Manage'}<ArrowRight />
+      </Link>
+    </nav>
+  </CheckoutHeader>
     <main className={walletMain}>
       <ul className={paymentsList}>
         { paymentMethods.map((el, i) => (

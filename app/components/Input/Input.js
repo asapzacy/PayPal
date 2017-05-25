@@ -3,8 +3,14 @@ import { inputContainer, search, underline } from './styles.css'
 
 const Input = ({ text, value, updatePaymentInfo }) => (
   <div className={inputContainer}>
-    <label>{text}</label>
-    <input className={search} value={value} type='text' onChange={(e) => updatePaymentInfo(text, e) } spellCheck={false} />
+    <input
+      className={search}
+      value={value}
+      type='text'
+      onChange={(e) => updatePaymentInfo(text, e)}
+      spellCheck={false}
+      placeholder={text}
+    />
     <span className={underline}></span>
   </div>
 )

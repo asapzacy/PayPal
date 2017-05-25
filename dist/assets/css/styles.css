@@ -14,6 +14,19 @@ table, hr { border:0 }
 nav { font-weight:700 }
 sup { font-size:66% }
 
+/* -------  form input tranisitions  ------- */
+a:hover::after { opacity:1 }
+
+/* -------  ::placeholder stuff  ------- */
+::-webkit-input-placeholder { color:#070707;opacity:0.5;transition:opacity 0.22s; }
+:-moz-placeholder { color:#070707;opacity:0.5;transition:opacity 0.22s; }
+::-moz-placeholder { color:#070707;opacity:0.5;transition:opacity 0.22s; }
+:-ms-input-placeholder { color:#070707;opacity:0.5;transition:opacity 0.22s; }
+:focus::-webkit-input-placeholder { opacity:0;transition:opacity 0.22s; }
+:focus:-moz-placeholder { opacity:0;transition:opacity 0.22s; }
+:focus::-moz-placeholder { opacity:0;transition:opacity 0.22s; }
+:focus:-ms-placeholder { opacity:0;transition:opacity 0.22s; }
+
 /* -------  body  ------- */
 body {
   background:#f5f5f5;
@@ -26,5 +39,3 @@ body {
 
 /* -------  app  ------- */
 #app { width:100%;height:100% }
-
-/*::-webkit-scrollbar { width:0;height:0;background:transparent }*/

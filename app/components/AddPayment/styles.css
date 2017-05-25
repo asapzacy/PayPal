@@ -1,8 +1,0 @@
-
-.EditPaymentMethodContainer {
-
-}
-
-.addPaymentHeader {
-  composes:walletHeader from 'styles/shared.css';
-}

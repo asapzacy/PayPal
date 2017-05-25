@@ -1,10 +1,6 @@
 
-.leftSideContainer {
-  flex:4;
-  overflow:auto;
-}
-
-.paymentsHeader {
+/* -------  CheckoutHeader  ------- */
+.checkoutHeaderContainer {
   text-align:center;
   border-bottom:1px solid #bdbdbd;
   display:flex;
@@ -13,14 +9,12 @@
   flex-wrap:wrap;
   padding:1em 0.5em;
 }
-
-.paymentsIcon {
+.checkoutHeaderText {
+  flex:1;
+}
+.checkoutHeaderIcon {
   font-size:2em;
   display:flex;
   align-items:center;
   justify-content:flex-end;
-}
-
-.paymentsHeading {
-  flex:1;
 }

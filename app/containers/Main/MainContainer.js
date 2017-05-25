@@ -10,14 +10,14 @@ class MainContainer extends Component {
       isLoading: true,
       user: {
         name: '',
-        price: 0,
+        price: 0
       },
       paymentMethods: [],
       preferredPaymentId: 0,
       isPaymentMethodBeingUpdated: false
     }
     this.updatePreferredPayment = this.updatePreferredPayment.bind(this)
-    this.updatePayment = this.updatePayment.bind(this)
+    this.updatePaymentMethod = this.updatePaymentMethod.bind(this)
     this.changePaymentMethod = this.changePaymentMethod.bind(this)
   }
   componentDidMount() {
@@ -25,18 +25,19 @@ class MainContainer extends Component {
   }
   makeRequest() {
     getUserInfo()
-      .then((info) => {
+      .then((data) => {
         this.setState({
           isLoading: false,
-          user: {
-            name: info.name,
-            price: info.price,
-          },
-          paymentMethods: info.payments,
-          preferredPaymentId: 0
+          user: data.user,
+          paymentMethods: data.paymentMethods,
+          preferredPaymentId: 1
         })
       })
-      .catch(e => console.log(e))
+      .catch((error) => {
+        this.setState({
+          isLoading: false
+        })
+      }, () => console.log(error))
   }
   updatePreferredPayment(id) {
     this.setState({
@@ -44,11 +45,11 @@ class MainContainer extends Component {
       isPaymentMethodBeingUpdated: false
     })
   }
-  updatePayment(paymentMethodIndex, newPaymentMethod) {
-    const paymentsCopy = [ ...this.state.paymentMethods ]
-    paymentsCopy[paymentMethodIndex] = newPaymentMethod
+  updatePaymentMethod(paymentMethodId, updatedPaymentMethod) {
+    const paymentMethodsCopy = [ ...this.state.paymentMethods ]
+    paymentMethodsCopy[paymentMethodId] = updatedPaymentMethod
     this.setState({
-      paymentMethods: paymentsCopy
+      paymentMethods: paymentMethodsCopy
     })
   }
   changePaymentMethod() {
@@ -66,7 +67,7 @@ class MainContainer extends Component {
               ? <div>{'loading..'}</div>
               : React.cloneElement(this.props.children, {
                   updatePreferredPayment: this.updatePreferredPayment,
-                  updatePayment: this.updatePayment,
+                  updatePaymentMethod: this.updatePaymentMethod,
                   ...this.state
                 })
             }
