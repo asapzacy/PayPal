@@ -1,30 +1,57 @@
 import React from 'react'
+import { Link } from 'react-router'
 import { Logo, Payment } from 'components'
-import Total from './Total'
+import ShoppingCartIcon from 'react-icons/lib/io/ios-cart'
 import ArrowRight from 'react-icons/lib/io/ios-arrow-right'
 import Close from 'react-icons/lib/io/ios-close-empty'
-import { shoppingCartContainer, shoppingCartHeader, shoppingCartMain,
-  welcomeMessage, payWithContainer } from './styles.css'
+import { shoppingCartContainer, shoppingCartHeader, shoppingCartTotalContainer,
+ shoppingCartIcon, shoppingCartPrice } from './styles.css'
 
-const ShoppingCart = ({ price, name, payments, preferredPayment, changePaymentMethod, isPaymentChanging }) =>  (
+import { shoppingCartMain, welcomeMessage, payWithContainer, } from './styles.css'
+
+import { payWithText, payWithInfo } from './styles.css'
+
+const ShoppingCart = ({ user, ...props }) =>  (
   <section className={shoppingCartContainer}>
-    <header className={shoppingCartHeader}>
-      <Logo name={'paypal'} />
-      <Total price={price} />
-    </header>
+    <ShoppingCartHeader price={user.price} />
     <main className={shoppingCartMain}>
-      <p className={welcomeMessage}>{`Welcome back, ${name}!`}</p>
-      <section className={payWithContainer} style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap'}}>
-        <h2 style={{width:'50%'}}>{'Pay with:'}</h2>
-        <span style={{width:'50%',textAlign:'right',cursor:'pointer'}} onClick={changePaymentMethod}>
-          {'change'}
-          { isPaymentChanging ? <Close /> : <ArrowRight /> }
-        </span>
-        { payments[preferredPayment] && <Payment {...payments[preferredPayment]} isPreferred={true} /> }
-        <Total price={price} />
-      </section>
+      <p className={welcomeMessage}>{`Welcome back, ${user.name}!`}</p>
+      <PayWithContainer
+        price={user.price}
+        preferredPaymentMethod={props.paymentMethods[props.preferredPaymentId]}
+        isPaymentMethodBeingUpdated={props.isPaymentMethodBeingUpdated}
+        changePaymentMethod={props.changePaymentMethod}
+      />
     </main>
   </section>
 )
 
 export default ShoppingCart
+
+const ShoppingCartHeader = ({ price }) => (
+  <header className={shoppingCartHeader}>
+    <Logo company={'paypal'} />
+    <ShoppingCartTotal price={price} shouldShowCart={true} />
+  </header>
+)
+
+const ShoppingCartTotal = ({ price, shouldShowCart }) => (
+  <div className={shoppingCartTotalContainer}>
+    { shouldShowCart && <ShoppingCartIcon className={shoppingCartIcon} /> }
+    <span className={shoppingCartPrice}>{`$${price.toLocaleString()} USD`}</span>
+  </div>
+)
+
+const PayWithContainer = ({ price, preferredPaymentMethod, isPaymentMethodBeingUpdated, changePaymentMethod }) => (
+  <section className={payWithContainer}>
+    <h2 className={payWithText}>{'Pay with:'}</h2>
+    <Link to='/'>
+      <span className={payWithInfo} onClick={changePaymentMethod}>
+        {'change'}
+        { isPaymentMethodBeingUpdated ? <Close /> : <ArrowRight /> }
+      </span>
+    </Link>
+    { preferredPaymentMethod && <Payment {...preferredPaymentMethod} isPreferred={true} shouldShowCheckmark={false} /> }
+    <ShoppingCartTotal price={price} shouldShowCart={false} />
+  </section>
+)

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Header, ShoppingCart } from 'components'
-import { CheckoutContainer } from 'containers'
 import { getUserInfo } from 'helpers/api'
 import { mainContainer, innerContainer, checkoutContainer } from './styles.css'
 
@@ -8,11 +7,14 @@ class MainContainer extends Component {
   constructor() {
     super()
     this.state = {
-      name: '',
-      price: 0,
-      payments: [],
-      preferredPayment: 0,
-      isPaymentChanging: false
+      isLoading: true,
+      user: {
+        name: '',
+        price: 0,
+      },
+      paymentMethods: [],
+      preferredPaymentId: 0,
+      isPaymentMethodBeingUpdated: false
     }
     this.updatePreferredPayment = this.updatePreferredPayment.bind(this)
     this.updatePayment = this.updatePayment.bind(this)
@@ -25,28 +27,34 @@ class MainContainer extends Component {
     getUserInfo()
       .then((info) => {
         this.setState({
-          name: info.name,
-          price: info.price,
-          payments: info.payments,
-          preferredPayment: 0
+          isLoading: false,
+          user: {
+            name: info.name,
+            price: info.price,
+          },
+          paymentMethods: info.payments,
+          preferredPaymentId: 0
         })
       })
       .catch(e => console.log(e))
   }
   updatePreferredPayment(id) {
-    this.setState({ preferredPayment: id }, () => {
-      this.changePaymentMethod()
+    this.setState({
+      preferredPaymentId: id,
+      isPaymentMethodBeingUpdated: false
     })
   }
-  updatePayment(updatedPaymentInfo, index) {
-    const copy = [ ...this.state.payments ]
-    console.log(this.state.payments, index)
-    copy[index] = updatedPaymentInfo
-    console.log(copy, index)
-    this.setState({ payments: copy },() => console.log(this.state.payments[index]))
+  updatePayment(paymentMethodIndex, newPaymentMethod) {
+    const paymentsCopy = [ ...this.state.paymentMethods ]
+    paymentsCopy[paymentMethodIndex] = newPaymentMethod
+    this.setState({
+      paymentMethods: paymentsCopy
+    })
   }
   changePaymentMethod() {
-    this.setState({ isPaymentChanging: !this.state.isPaymentChanging })
+    this.setState({
+      isPaymentMethodBeingUpdated: !this.state.isPaymentMethodBeingUpdated
+    })
   }
   render() {
     return (
@@ -54,11 +62,13 @@ class MainContainer extends Component {
         <main className={innerContainer}>
           <Header />
           <section className={checkoutContainer}>
-            { React.cloneElement(this.props.children, {
-                updatePreferredPayment: this.updatePreferredPayment,
-                updatePayment: this.updatePayment,
-                ...this.state
-              })
+            { this.state.isLoading
+              ? <div>{'loading..'}</div>
+              : React.cloneElement(this.props.children, {
+                  updatePreferredPayment: this.updatePreferredPayment,
+                  updatePayment: this.updatePayment,
+                  ...this.state
+                })
             }
             <ShoppingCart {...this.state} changePaymentMethod={this.changePaymentMethod} />
           </section>

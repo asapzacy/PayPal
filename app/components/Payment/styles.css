@@ -29,6 +29,7 @@
   flex:1;
   margin-left:1em;
   font-weight:500;
+  transition:margin-top 0.22s;
 }
 .paymentType {
   display:inline-block;

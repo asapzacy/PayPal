@@ -8,24 +8,28 @@ import { walletContainer, walletHeader, walletMain,
   updatePaymentsContainer, updatePayment, paymentsList } from './styles.css'
 import { paymentsIcon, paymentsHeading } from 'styles/shared.css'
 
-const Wallet = ({ payments, preferredPayment, updatePreferredPayment, isPaymentChanging }) => (
+const Wallet = ({ paymentMethods, preferredPaymentId, updatePreferredPayment,
+isPaymentMethodBeingUpdated }) => (
   <section className={walletContainer}>
     <header className={walletHeader}>
       <h2 className={paymentsHeading}>{'Wallet'}</h2>
       <section className={updatePaymentsContainer}>
         <Link to='/addPayment' className={updatePayment}><Add />{'Add'}</Link>
-        <Link to={`/managePayment/${preferredPayment}`} className={updatePayment}>{'Manage'}<ArrowRight /></Link>
+        <Link to={`/managePayment/${preferredPaymentId}`} className={updatePayment}>{'Manage'}<ArrowRight /></Link>
       </section>
     </header>
     <main className={walletMain}>
       <ul className={paymentsList}>
-        { payments.map((el, i) => <Payment {...el}
-                                    id={i}
-                                    isPreferred={i === preferredPayment}
-                                    updatePreferredPayment={updatePreferredPayment}
-                                    isPaymentChanging={isPaymentChanging}
-                                    key={i}
-                                  />
+        { paymentMethods.map((el, i) => (
+          <Payment
+            {...el}
+            id={i}
+            isPreferred={i === preferredPaymentId}
+            shouldShowCheckmark={true}
+            updatePreferredPayment={updatePreferredPayment}
+            isPaymentMethodBeingUpdated={isPaymentMethodBeingUpdated}
+            key={i}
+          />)
         )}
       </ul>
     </main>
