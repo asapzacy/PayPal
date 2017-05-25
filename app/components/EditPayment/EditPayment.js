@@ -1,7 +1,7 @@
 import React from 'react'
 import { CheckoutHeader, CreditCard, Input } from 'components'
 import { paymentsContainer, paymentsHeader, paymentsIcon, paymentsHeading } from 'styles/shared.css'
-import { editPaymentContainer } from './styles.css'
+import { editPaymentContainer, creditCardsContainer } from './styles.css'
 
 const EditPayment = ({ preferredPaymentId, updatePaymentInfo, updatePaymentCard, savePaymentInfo, buttonText = 'Save', isPaymentSaved, ...props }) => {
   const newPaymentMethod = {
@@ -19,7 +19,7 @@ const EditPayment = ({ preferredPaymentId, updatePaymentInfo, updatePaymentCard,
       <main className={null}>
         <Input text={'first'} value={newPaymentMethod.first} updatePaymentInfo={updatePaymentInfo} />
         <Input text={'last'} value={newPaymentMethod.last} updatePaymentInfo={updatePaymentInfo} />
-        <section className={null}>
+        <section className={creditCardsContainer}>
           { creditCards.map((el, i) => (
             <CreditCard
               card={el}
