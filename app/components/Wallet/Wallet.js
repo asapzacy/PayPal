@@ -10,15 +10,15 @@ const Wallet = ({ paymentMethods, preferredPaymentId, updatePreferredPayment,
 isPaymentMethodBeingUpdated }) => (
   <section className={walletContainer}>
     <CheckoutHeader text={'Wallet'}>
-    <nav className={updatePaymentNav}>
-      <Link to={'/addPayment'} className={updatePaymentLink}>
-        <Add />{'Add'}
-      </Link>
-      <Link to={`/managePayment/${preferredPaymentId}`} className={updatePaymentLink}>
-        {'Manage'}<ArrowRight />
-      </Link>
-    </nav>
-  </CheckoutHeader>
+      <nav className={updatePaymentNav}>
+        <Link to={'/addPayment'} className={updatePaymentLink}>
+          <Add />{'Add'}
+        </Link>
+        <Link to={`/managePayment/${preferredPaymentId}`} className={updatePaymentLink}>
+          {'Manage'}<ArrowRight />
+        </Link>
+      </nav>
+    </CheckoutHeader>
     <main className={walletMain}>
       <ul className={paymentsList}>
         { paymentMethods.map((el, i) => (

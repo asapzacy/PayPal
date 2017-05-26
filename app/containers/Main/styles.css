@@ -9,18 +9,26 @@
   justify-content:center;
 }
 .innerContainer {
-  width:60%;
-  min-width:800px;
-  height:60%;
+  width:80%;
+  height:80%;
+  min-width:300px;
   display:flex;
-  justify-content:space-between;
   flex-direction:column;
 }
 .checkoutContainer {
   width:100%;
   border:1px solid #bdbdbd;
   border-radius:6px;
-  flex:1;
   display:flex;
-  margin:1em 0;
+  flex:1;
+  flex-direction:column;
+}
+@media only screen and (min-width:667px) {
+  .checkoutContainer {
+    flex-direction:row;
+  }
+  .innerContainer {
+    width:60%;
+    height:60%;
+  }
 }

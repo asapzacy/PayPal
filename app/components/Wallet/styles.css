@@ -20,22 +20,6 @@
 .walletHeader {
   composes:paymentsHeader from 'styles/shared.css';
 }
-
-.icon {
-
-}
-
-.heading {
-
-}
-.walletMain {
-  /*display: flex;*/
-    /*justify-content: space-around;*/
-}
-
-.paymentsList {
-
-}
 .updatePaymentsContainer {
   width:100%;
   margin-top:1em;
