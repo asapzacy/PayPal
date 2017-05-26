@@ -7,6 +7,7 @@ img { max-width:100% }
 a { color:inherit;text-decoration:none }
 input { border:0;background:inherit;font:inherit }
 input:focus { outline:0 }
+button { border:0;vertical-align:middle;white-space:normal;background:none;cursor:pointer }
 ul, menu { list-style-type:none }
 h1,h2,h3,h4,h5,h6 { font-weight:inherit }
 strong { font-weight:700 }

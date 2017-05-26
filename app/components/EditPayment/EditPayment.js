@@ -1,7 +1,7 @@
 import React from 'react'
 import { CheckoutHeader, CreditCard, Input } from 'components'
-import { paymentsContainer, paymentsHeader, paymentsIcon, paymentsHeading } from 'styles/shared.css'
-import { editPaymentContainer, paymentInfoContainer, creditCardsContainer } from './styles.css'
+import { editPaymentContainer, paymentInfoContainer, creditCardsContainer,
+  editPaymentButton } from './styles.css'
 
 const EditPayment = (props) => {
   const { preferredPaymentId, updatePaymentInfo, updatePaymentCard,
@@ -49,7 +49,7 @@ const EditPayment = (props) => {
         <Input text={'cc'} value={newPaymentMethod.cc} updatePaymentInfo={updatePaymentInfo} iconType={newPaymentMethod.type} />
         <Input text={'expiration'} value={newPaymentMethod.expiration} updatePaymentInfo={updatePaymentInfo} />
         <Input text={'csc'} value={newPaymentMethod.csc} updatePaymentInfo={updatePaymentInfo} iconType={'csc'} />
-        <button onClick={(e) => savePaymentInfo(newPaymentIndex, newPaymentMethod)}>
+        <button className={editPaymentButton} onClick={(e) => savePaymentInfo(newPaymentIndex, newPaymentMethod)}>
           { isPaymentSaved ? 'Saved' : buttonText }
         </button>
       </main>

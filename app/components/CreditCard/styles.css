@@ -2,14 +2,14 @@
 /* -------  CreditCard  ------- */
 .creditCardContainer {
   line-height:0;
-  margin:0 3.33%;
+  margin:0 5%;
 }
 
 .creditCard {
-  width:42px;
+  padding:4%;
   cursor:pointer;
   filter:grayscale(100%);
-  transition:filter 0.44s;
+  transition:filter 0.66s;
 }
 
 .creditCardActive {

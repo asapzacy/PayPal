@@ -6,8 +6,8 @@
 .creditCardsContainer {
   display:flex;
   width:100%;
-  margin:1em 0;
-  justify-content:center;
+  margin:0.5em 0;
+  justify-content:space-around;
 }
 .paymentInfoContainer {
   display:flex;
@@ -16,4 +16,7 @@
 }
 .paymentInfoContainer div:nth-child(4) {
   width:100%;
+}
+.editPaymentButton {
+
 }
