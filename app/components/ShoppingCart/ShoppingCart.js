@@ -4,12 +4,9 @@ import { Logo, Payment } from 'components'
 import ShoppingCartIcon from 'react-icons/lib/io/ios-cart'
 import ArrowRight from 'react-icons/lib/io/ios-arrow-right'
 import Close from 'react-icons/lib/io/ios-close-empty'
-import { shoppingCartContainer, shoppingCartHeader, shoppingCartTotalContainer,
- shoppingCartIcon, shoppingCartPrice } from './styles.css'
-
-import { shoppingCartMain, welcomeMessage, payWithContainer, } from './styles.css'
-
-import { payWithText, payWithInfo } from './styles.css'
+import { shoppingCartContainer, shoppingCartMain, welcomeMessage,
+  shoppingCartHeader, shoppingCartPrice, shoppingCartIcon, payWithContainer,
+  payWithText, payWithInfo } from './styles.css'
 
 const ShoppingCart = ({ user, ...props }) =>  (
   <section className={shoppingCartContainer}>
@@ -36,7 +33,7 @@ const ShoppingCartHeader = ({ price }) => (
 )
 
 const ShoppingCartTotal = ({ price, shouldShowCart }) => (
-  <div className={shoppingCartTotalContainer}>
+  <div>
     { shouldShowCart && <ShoppingCartIcon className={shoppingCartIcon} /> }
     <span className={shoppingCartPrice}>{`$${price.toLocaleString()} USD`}</span>
   </div>
@@ -45,8 +42,8 @@ const ShoppingCartTotal = ({ price, shouldShowCart }) => (
 const PayWithContainer = ({ price, preferredPaymentMethod, isPaymentMethodBeingUpdated, changePaymentMethod }) => (
   <section className={payWithContainer}>
     <h2 className={payWithText}>{'Pay with:'}</h2>
-    <Link to='/'>
-      <span className={payWithInfo} onClick={changePaymentMethod}>
+    <Link to='/' className={payWithInfo}>
+      <span onClick={changePaymentMethod}>
         {'change'}
         { isPaymentMethodBeingUpdated ? <Close /> : <ArrowRight /> }
       </span>

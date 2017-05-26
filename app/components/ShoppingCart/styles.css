@@ -1,22 +1,20 @@
 
-
+/* -------  ShoppingCart  ------- */
 .shoppingCartContainer {
   flex:6;
   background:#e0e0e0;
 }
-
 .shoppingCartMain {
   padding:1.5em 3em;
 }
-
 .welcomeMessage {
   margin-bottom:3em;
 }
-
 .shoppingCartContainer .payWithContainer li {
   border:0;
 }
 
+/* -------  ShoppingCartHeader  ------- */
 .shoppingCartHeader {
   height:20%;
   padding:1.5em 3em;
@@ -25,8 +23,6 @@
   align-items:center;
   position:relative;
 }
-
-
 .shoppingCartHeader::after {
   content:'';
   width:80%;
@@ -43,24 +39,21 @@
 .shoppingCartPrice {
   font-weight:600;
 }
-
 .shoppingCartIcon {
   font-size:1.2em;
   margin:0 0.6em 0.2em 0;
 }
 
-
+/* -------  PayWithContainer  ------- */
 .payWithContainer {
   display:flex;
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
 }
-
 .payWithText {
   width:50%;
 }
-
 .payWithInfo {
   width:50%;
   text-align:right;
