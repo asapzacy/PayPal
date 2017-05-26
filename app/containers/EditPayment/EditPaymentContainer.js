@@ -44,7 +44,7 @@ class EditPaymentContainer extends Component {
     })
   }
   savePaymentInfo(index, newPayment) {
-    this.props.updatePaymentMethod(index, newPayment)
+    this.props.updatePaymentMethods(index, newPayment)
     this.setState({ isPaymentSaved: true })
   }
   updatePaymentInfo(cardInfo, event) {

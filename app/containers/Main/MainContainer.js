@@ -17,7 +17,7 @@ class MainContainer extends Component {
       isPaymentMethodBeingUpdated: false
     }
     this.updatePreferredPayment = this.updatePreferredPayment.bind(this)
-    this.updatePaymentMethod = this.updatePaymentMethod.bind(this)
+    this.updatePaymentMethods = this.updatePaymentMethods.bind(this)
     this.changePaymentMethod = this.changePaymentMethod.bind(this)
   }
   componentDidMount() {
@@ -45,7 +45,7 @@ class MainContainer extends Component {
       isPaymentMethodBeingUpdated: false
     })
   }
-  updatePaymentMethod(paymentMethodId, updatedPaymentMethod) {
+  updatePaymentMethods(paymentMethodId, updatedPaymentMethod) {
     const paymentMethodsCopy = [ ...this.state.paymentMethods ]
     paymentMethodsCopy[paymentMethodId] = updatedPaymentMethod
     this.setState({
@@ -67,7 +67,7 @@ class MainContainer extends Component {
               ? <div>{'loading..'}</div>
               : React.cloneElement(this.props.children, {
                   updatePreferredPayment: this.updatePreferredPayment,
-                  updatePaymentMethod: this.updatePaymentMethod,
+                  updatePaymentMethods: this.updatePaymentMethods,
                   ...this.state
                 })
             }
