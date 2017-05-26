@@ -5,11 +5,12 @@ import { checkoutHeaderContainer, checkoutHeaderIcon, checkoutHeaderText } from 
 
 const CheckoutHeader = ({ text, isNotHomePage, children }) => (
   <header className={checkoutHeaderContainer}>
-    <span className={checkoutHeaderIcon}>
-      { isNotHomePage && <Link to='/'><ArrowLeft /></Link> }
-    </span>
+      { isNotHomePage &&
+        <span className={checkoutHeaderIcon}>
+          <Link to='/'><ArrowLeft /></Link>
+        </span>
+      }
     <h2 className={checkoutHeaderText}>{text}</h2>
-    <span className={checkoutHeaderIcon}></span>
     {children}
   </header>
 )
