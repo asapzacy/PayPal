@@ -41,7 +41,7 @@ then --> [localhost:8080](http://localhost:8080)
   - add a new payment - user fills in payment info and creates a `newPaymentMethod` object which gets added to `this.state.paymentMethods` array
   - read existing payments - displays all payment methods and also shows which method is being used / preferred
   - update existing payment - clicking on the manage button will take you to `/managePayment/${perferredPaymentId}` which allows us to pre-populate the same component from adding a new method (`<EditPaymentInfo />`), from there we just update `this.state.paymentMethods` with the updated object
-  - delete existing payment - I was following the preview images and never saw a delete icon or way to do that, so I actually havn't implemented this yet, but would follow the same idealogy as adding or managing payment
+  - delete existing payment - I was following the preview images and never saw a delete icon or way to do that, so I actually haven't implemented this yet, but would follow the same ideology as adding or managing payment
 
 ## Note
-It was a little awkward not using a database for this type of project. This is why there are minimal API calls and backend logic, but I felt it was best to spend my time and efforts showing my abilities and what I'm best at (frontend, UI), and it is fully functioning, but like I said, a little awkward and a database would've been neccessary in a production version.
+It was a little awkward not using a database for this type of project - this is why there are minimal API calls and backend logic. I wanted to show off my abilities as best as possible, so I spent most of my time in areas I'm best at (frontend, UI). It's still fully functional, but a little awkward and a database would've been necessary in a production environment.
