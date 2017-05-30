@@ -13,12 +13,7 @@
   padding:0 1em;
 }
 .link {
-  opacity:1;
-  border-bottom:1px solid currentColor;
-  transition:opacity 0.22s;
-}
-.link:hover {
-  opacity:0.5;
+  composes:github from 'styles/shared.css'
 }
 .hi {
   font-size:1.6em;

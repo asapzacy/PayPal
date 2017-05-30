@@ -3,7 +3,6 @@ const express = require('express')
 const compression = require('compression')
 const cors = require('cors')
 const port = process.env.PORT || 9090
-const sampleData = require('./app/data/sample_data')
 
 const app = express()
 app.use(compression())
@@ -43,6 +42,7 @@ const createPayments = () => {
   return payments
 }
 
+// API request
 app.get('/api/sampleData', (req, res) => {
   const sample_data = {
     user: createUserInfo(),

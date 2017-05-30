@@ -1,13 +1,13 @@
 
 /* -------  Input  ------- */
-.inputContainer {
+.container {
   width:45%;
   margin:2.5%;
   position:relative;
   display:flex;
   align-items:center;
 }
-.inputSearch {
+.search {
   height:2.5em;
   width:100%;
   padding:0 0.75em;
@@ -15,7 +15,7 @@
   background:#fff;
   border-radius:2px;
 }
-.inputUnderline {
+.underline {
   display:block;
   height:4px;width:0;
   position:absolute;
@@ -26,11 +26,11 @@
   border-radius:0 0 100% 100%;
   transition:opacity 0.22s,width 0.22s;
 }
-.inputSearch:focus ~ .inputUnderline {
+.search:focus ~ .underline {
   width:100%;
   opacity:1;
 }
-.inputIcon {
+.icon {
   height:100%;
   width:2em;
   position:absolute;

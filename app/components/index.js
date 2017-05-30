@@ -8,7 +8,6 @@ export Home from './Home/Home'
 /* -------  checkout components ------- */
 export Title from './Title/Title'
 export Payment from './Payment/Payment'
-export Input from './Input/Input'
 export CreditCard from './CreditCard/CreditCard'
 
 /* -------  random components  ------- */

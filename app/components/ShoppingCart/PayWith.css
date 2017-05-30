@@ -6,6 +6,10 @@
   align-items:center;
   flex-wrap:wrap;
 }
+.link {
+  width:50%;
+  composes:link from 'styles/shared.css'
+}
 .text {
   width:50%;
 }
@@ -22,4 +26,6 @@
   font-size:1.2em;
   display:flex;
   align-items:center;
+  flex:1;
+  justify-content:flex-end;
 }

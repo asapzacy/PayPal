@@ -1,12 +1,10 @@
 import React from 'react'
-import { Title, CreditCard, Input } from 'components'
-import { editPaymentContainer, paymentInfoContainer, creditCardsContainer,
-  editPaymentButton } from './styles.css'
+import { Title, CreditCard } from 'components'
+import Input from './Input'
+import styles from './EditPayment.css'
 
-const EditPayment = (props) => {
-  const { preferredId, updatePaymentInfo, updateCard,
-    savePaymentInfo, isSaved, payments } = props
-  const newPaymentMethod = {
+const EditPayment = ({ payments, preferredId, updateInfo, updateCard, savePayment, ...props }) => {
+  const newPayment = {
     first: props.first,
     last: props.last,
     type: props.type,
@@ -14,43 +12,43 @@ const EditPayment = (props) => {
     expiration: props.expiration,
     csc: props.csc
   }
-  let buttonText
-  let newPaymentIndex
-  let checkoutHeaderText
+  let btnText
+  let index
+  let title
   if (!props.params.paymentId) {
     // if no params.paymentId === means were on /addPayment, so we give
-    // newPaymentIndex index of .length instead of pushing and mutating
-    // our this.state.payments array.
-    newPaymentIndex = payments.length
-    buttonText = 'Add'
-    checkoutHeaderText = 'Add debit or credit card'
+    // newPaymentIndex an index of this.state.payments.length instead of
+    // pushing and mutating our this.state.payments array.
+    index = payments.length
+    btnText = 'Add'
+    title = 'Add debit or credit card'
   } else {
-    newPaymentIndex = preferredId
-    buttonText = 'Save'
-    checkoutHeaderText = 'Manage debit or credit card'
+    index = preferredId
+    btnText = 'Save'
+    title = 'Manage debit or credit card'
   }
   const creditCards = ['Visa', 'Amex', 'Mastercard', 'Discover']
   return (
-    <section className={editPaymentContainer}>
-      <Title title={checkoutHeaderText} notHomePage />
-      <main className={paymentInfoContainer}>
-        <Input text={'first'} value={newPaymentMethod.first} updatePaymentInfo={updatePaymentInfo} />
-        <Input text={'last'} value={newPaymentMethod.last} updatePaymentInfo={updatePaymentInfo} />
-        <section className={creditCardsContainer}>
+    <section className={styles.container} style={{borderRight:props.hasLoaded && '1px solid #bdbdbd'}}>
+      <Title title={title} notHomePage />
+      <main className={styles.info}>
+        <Input text={'first'} value={newPayment.first} updateInfo={updateInfo} />
+        <Input text={'last'} value={newPayment.last} updateInfo={updateInfo} />
+        <section className={styles.creditCards}>
           { creditCards.map((el, i) => (
             <CreditCard
               card={el}
-              isActive={newPaymentMethod.type === el}
+              isActive={newPayment.type === el}
               updateCard={() => updateCard(el)}
               key={i}
             />)
           )}
         </section>
-        <Input text={'cc'} value={newPaymentMethod.cc} updatePaymentInfo={updatePaymentInfo} iconType={newPaymentMethod.type} />
-        <Input text={'expiration'} value={newPaymentMethod.expiration} updatePaymentInfo={updatePaymentInfo} />
-        <Input text={'csc'} value={newPaymentMethod.csc} updatePaymentInfo={updatePaymentInfo} iconType={'csc'} />
-        <button className={editPaymentButton} onClick={(e) => savePaymentInfo(newPaymentMethod, newPaymentIndex)}>
-          { isSaved ? 'Saved' : buttonText }
+        <Input text={'cc'} value={newPayment.cc} updateInfo={updateInfo} icon={newPayment.type} />
+        <Input text={'expiration'} value={newPayment.expiration} updateInfo={updateInfo} />
+        <Input text={'csc'} value={newPayment.csc} updateInfo={updateInfo} icon={'csc'} />
+        <button className={styles.btn} onClick={(e) => savePayment(newPayment, index)}>
+          { props.isSaved ? 'Saved' : btnText }
         </button>
       </main>
     </section>

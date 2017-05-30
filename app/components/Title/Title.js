@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import Arrow from 'react-icons/lib/io/ios-arrow-left'
+import Arrow from 'react-icons/lib/io/ios-arrow-back'
 import styles from './Title.css'
 
 const Title = ({ title, notHomePage, children }) => (

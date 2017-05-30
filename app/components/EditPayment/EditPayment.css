@@ -1,24 +1,30 @@
 
 /* -------  EditPayment  ------- */
-.editPaymentContainer {
+.container {
   composes:leftSide from 'styles/shared.css';
 }
-.creditCardsContainer {
+.creditCards {
   display:flex;
-  width:100%;
-  margin:0.5em 0;
+  width:90%;
+  margin:0.25em auto;
   justify-content:space-around;
 }
-.paymentInfoContainer {
+.info {
   display:flex;
   flex-wrap:wrap;
   padding:1em 0.5em;
 }
-.paymentInfoContainer div:nth-child(4) {
+.info div:nth-child(4) {
   width:100%;
 }
-.editPaymentButton {
+.btn {
   width:50%;
-  margin:3.33em auto;
+  margin:2em auto;
   composes:btn from 'styles/shared.css'
+}
+
+@media only screen and (min-width:667px) {
+  .btn {
+    margin:3.33em auto;
+  }
 }
