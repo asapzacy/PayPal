@@ -1,0 +1,16 @@
+
+/* -------  PayWith  ------- */
+.container {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.text {
+  width:50%;
+}
+.info {
+  width:50%;
+  text-align:right;
+  cursor:pointer;
+}

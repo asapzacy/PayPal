@@ -1,8 +1,12 @@
 import React from 'react'
-import { logo } from './styles.css'
+import styles from './Logo.css'
 
 const Logo = ({ company }) => (
-  <img className={logo} src={`/assets/img/logos/${company}.svg`} alt={`${company} logo`} />
+  <img
+    className={styles.logo}
+    src={`/assets/img/logos/${company}.svg`}
+    alt={`${company} Logo`}
+  />
 )
 
 export default Logo

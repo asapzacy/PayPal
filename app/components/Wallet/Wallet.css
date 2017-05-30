@@ -1,26 +1,24 @@
 
-.walletContainer {
-  composes:leftSideContainer from 'styles/shared.css';
+/* -------  Wallet  ------- */
+.container {
+  composes:leftSide from 'styles/shared.css';
 }
-
-.updatePaymentNav {
+.menu {
   width:100%;
   margin-top:1em;
   display:flex;
   justify-content:space-between;
 }
-.updatePaymentLink {
+.link {
   display:flex;
   align-items:center;
   color:#3c8ac7;
   font-weight:500;
   line-height:1;
 }
-
-.walletHeader {
-  composes:paymentsHeader from 'styles/shared.css';
-}
-.updatePaymentsContainer {
+.payments { }
+.list { }
+/*.updatePaymentsContainer {
   width:100%;
   margin-top:1em;
   display:flex;
@@ -33,4 +31,4 @@
   color:#3c8ac7;
   font-weight:500;
   line-height:1;
-}
+}*/

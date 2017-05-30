@@ -1,14 +1,17 @@
 import React from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { MainContainer, EditPaymentContainer } from 'containers'
-import { Wallet } from 'components'
+import { Home, Wallet } from 'components'
 
 const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={MainContainer}>
-      <IndexRoute component={Wallet} />
-      <Route path='/addPayment' component={EditPaymentContainer} />
-      <Route path='/managePayment/:paymentId' component={EditPaymentContainer} />
+      <IndexRoute component={Home} />
+      <Route path='user'>
+        <IndexRoute component={Wallet} />
+        <Route path='addPayment' component={EditPaymentContainer} />
+        <Route path='managePayment/:paymentId' component={EditPaymentContainer} />
+      </Route>
     </Route>
   </Router>
 )

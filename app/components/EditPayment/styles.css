@@ -1,7 +1,7 @@
 
 /* -------  EditPayment  ------- */
 .editPaymentContainer {
-  composes:leftSideContainer from 'styles/shared.css';
+  composes:leftSide from 'styles/shared.css';
 }
 .creditCardsContainer {
   display:flex;

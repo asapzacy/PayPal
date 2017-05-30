@@ -1,17 +1,22 @@
 
-.leftSideContainer {
-  flex:6;
+.leftSide {
+  padding:1em;
+  flex-basis:60%;
   overflow:auto;
 }
-.rightSideContainer {
-  flex:4;
+.rightSide {
+  padding:1em;
+  flex-basis:40%;
+  border-top:1px solid #bdbdbd;
 }
 
-@media only screen and (min-width:800px) {
-  .leftSideContainer {
-    flex:4;
+@media only screen and (min-width:667px) {
+  .leftSide {
+    padding:2em;
+    flex-basis:40%;
   }
-  .rightSideContainer {
-    flex:6
+  .rightSide {
+    padding:2em;
+    flex-basis:60%;
   }
 }

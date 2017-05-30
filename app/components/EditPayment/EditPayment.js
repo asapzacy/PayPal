@@ -4,8 +4,8 @@ import { editPaymentContainer, paymentInfoContainer, creditCardsContainer,
   editPaymentButton } from './styles.css'
 
 const EditPayment = (props) => {
-  const { preferredPaymentId, updatePaymentInfo, updatePaymentCard,
-    savePaymentInfo, isPaymentSaved, paymentMethods } = props
+  const { preferredId, updatePaymentInfo, updatePaymentCard,
+    savePaymentInfo, isPaymentSaved, payments } = props
   const newPaymentMethod = {
     first: props.first,
     last: props.last,
@@ -20,12 +20,12 @@ const EditPayment = (props) => {
   if (!props.params.paymentId) {
     // if no params.paymentId === means were on /addPayment, so we give
     // newPaymentIndex index of .length instead of pushing and mutating
-    // our this.state.paymentMethods array.
-    newPaymentIndex = paymentMethods.length
+    // our this.state.payments array.
+    newPaymentIndex = payments.length
     buttonText = 'Add'
     checkoutHeaderText = 'Add debit or credit card'
   } else {
-    newPaymentIndex = preferredPaymentId
+    newPaymentIndex = preferredId
     buttonText = 'Save'
     checkoutHeaderText = 'Manage debit or credit card'
   }

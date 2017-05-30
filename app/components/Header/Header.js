@@ -1,11 +1,11 @@
 import React from 'react'
 import { Logo } from 'components'
-import { headerContainer, divider } from './styles.css'
+import styles from './Header.css'
 
 const Header = () => (
-  <header className={headerContainer}>
+  <header className={styles.container}>
     <Logo company={'toys-r-us'} />
-    <span className={divider}></span>
+    <span className={styles.divider}></span>
     <Logo company={'babies-r-us'} />
   </header>
 )

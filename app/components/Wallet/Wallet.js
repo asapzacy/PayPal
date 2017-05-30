@@ -3,32 +3,31 @@ import { Link } from 'react-router'
 import { CheckoutHeader, Payment } from 'components'
 import Close from 'react-icons/lib/io/ios-close-empty'
 import Add from 'react-icons/lib/io/ios-plus-empty'
-import ArrowRight from 'react-icons/lib/io/ios-arrow-right'
-import { walletContainer, updatePaymentNav, updatePaymentLink, walletMain, updatePayment, paymentsList } from './styles.css'
+import Arrow from 'react-icons/lib/io/ios-arrow-right'
+import styles from './Wallet.css'
 
-const Wallet = ({ paymentMethods, preferredPaymentId, updatePreferredPayment,
-isPaymentMethodBeingUpdated }) => (
-  <section className={walletContainer}>
+const Wallet = ({ payments, preferredId, updatePreferred, isSwitching }) => (
+  <section className={styles.container}>
     <CheckoutHeader text={'Wallet'}>
-      <nav className={updatePaymentNav}>
-        <Link to={'/addPayment'} className={updatePaymentLink}>
+      <menu className={styles.menu}>
+        <Link to={'/user/addPayment'} className={styles.link}>
           <Add />{'Add'}
         </Link>
-        <Link to={`/managePayment/${preferredPaymentId}`} className={updatePaymentLink}>
-          {'Manage'}<ArrowRight />
+        <Link to={`./user/managePayment/${preferredId}`} className={styles.link}>
+          {'Manage'}<Arrow />
         </Link>
-      </nav>
+      </menu>
     </CheckoutHeader>
-    <main className={walletMain}>
-      <ul className={paymentsList}>
-        { paymentMethods.map((el, i) => (
+    <main className={styles.payments}>
+      <ul className={styles.list}>
+        { payments.map((el, i) => (
           <Payment
             {...el}
             id={i}
-            isPreferred={i === preferredPaymentId}
-            shouldShowCheckmark={true}
-            updatePreferredPayment={updatePreferredPayment}
-            isPaymentMethodBeingUpdated={isPaymentMethodBeingUpdated}
+            isPreferred={i === preferredId}
+            updatePreferred={updatePreferred}
+            isSwitching={isSwitching}
+            showCheckmark
             key={i}
           />)
         )}

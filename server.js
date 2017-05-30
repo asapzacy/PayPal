@@ -2,16 +2,74 @@
 const express = require('express')
 const compression = require('compression')
 const cors = require('cors')
-const app = express()
 const port = process.env.PORT || 9090
 const sampleData = require('./app/data/sample_data')
 
+const app = express()
 app.use(compression())
 app.use(cors())
 
-app.get('/api', (req, res) => {
-  console.log(sampleData)
-  res.send(sampleData)
+// const createCcNumber = () => {
+//   let cc = ''
+//   for (let i = 1; i <= 12; i++) {
+//     str += Math.floor(Math.random() * 10)
+//     if (i % 4 === 0) {
+//       str += ' '
+//     }
+//   }
+//   return str
+// }
+//
+// const createPayment = () = {
+//   return {
+//     first: 'Zac',
+//     last: 'Arellano',
+//     type: createCC()
+//   }
+// }
+//
+const randomCcNumber = () => {
+  let cc = ''
+  for (let i = 1; i <= 16; i++) {
+    cc += Math.floor(Math.random() * 10)
+    if (i % 4 === 0) {
+      cc += ' '
+    }
+  }
+  return cc.slice(0,-1)
+}
+const randomCcType = () => {
+  const types = ['Amex', 'Discover', 'Mastercard', 'Visa']
+  return types[Math.floor(Math.random() * types.length)]
+}
+
+const createUserInfo = () => ({
+  name: 'Zac',
+  price: 88.08
+})
+
+const createPayments = () => {
+  const payments = []
+  for (let i = 0; i < 8; i++) {
+    payments.push({
+      first: 'Zac',
+      last: 'Arellano',
+      type: randomCcType(),
+      cc: randomCcNumber(),
+      expiration: '12/20',
+      csc: '123'
+    })
+  }
+  return payments
+}
+
+app.get('/api/sampleData', (req, res) => {
+  const sample_data = {
+    user: createUserInfo(),
+    payments: createPayments()
+  }
+  console.log(sample_data)
+  res.send(sample_data)
 })
 
 app.get('/', (req, res) => {

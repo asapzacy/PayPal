@@ -1,7 +1,7 @@
 {
-  "name": "paypal",
+  "name": "PayPal",
   "version": "1.0.0",
-  "description": "A PayPal Applications Engineer coding challenge.",
+  "description": "A Web Applications Engineer coding challenge.",
   "main": "server.js",
   "scripts": {
     "react": "env UV_THREADPOOL_SIZE=100 webpack-dev-server --progress --colors",
@@ -9,7 +9,7 @@
     "start": "yarn react | yarn node",
     "wake": "atom . && open http://localhost:8080 && yarn start",
     "build": "webpack -p --progress --colors",
-    "clean": "rm -rf node_modules && yarn",
+    "wipe": "rm -rf node_modules && yarn",
     "lint": "eslint app/.; exit 0",
     "fix": "eslint --fix app/.; exit 0",
     "images": "find ./dist/assets -name '*.svg' -type f -exec svgo '{}' \\;"
@@ -22,7 +22,6 @@
     "cors": "^2.8.3",
     "express": "^4.14.1",
     "nodemon": "^1.11.0",
-    "payment-icons": "^0.0.12",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-icons": "^2.2.3",
@@ -56,10 +55,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zacarellano/paypal.git"
+    "url": "git+https://github.com/zacarellano/PayPal.git"
   },
   "bugs": {
-    "url": "https://github.com/zacarellano/paypal/issues"
+    "url": "https://github.com/zacarellano/PayPal/issues"
   },
-  "homepage": "https://github.com/zacarellano/paypal/"
+  "homepage": "https://github.com/zacarellano/PayPal/"
 }

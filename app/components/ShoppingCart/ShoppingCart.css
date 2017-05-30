@@ -1,0 +1,23 @@
+
+/* -------  ShoppingCart  ------- */
+.container {
+  background:#e0e0e0;
+  padding:1em;
+  opacity:0;
+  transition:opacity 1.22s 0.66s;
+  composes:rightSide from 'styles/shared.css'
+}
+.main {
+}
+.welcome {
+  margin-bottom:2em;
+}
+/*.container .payWithContainer li {
+  border:0;
+}*/
+/*
+@media only screen and (min-width:667px) {
+  .shoppingCartMain, .shoppingCartHeader {
+    padding:1.5em 3em;
+  }
+}*/

@@ -7,7 +7,7 @@ const CheckoutHeader = ({ text, isNotHomePage, children }) => (
   <header className={checkoutHeaderContainer}>
       { isNotHomePage &&
         <span className={checkoutHeaderIcon}>
-          <Link to='/'><ArrowLeft /></Link>
+          <Link to='/user'><ArrowLeft /></Link>
         </span>
       }
     <h2 className={checkoutHeaderText}>{text}</h2>

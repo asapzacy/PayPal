@@ -4,7 +4,7 @@ const user_and_payment_methods = {
     name: 'Zac',
     price: 88.08
   },
-  paymentMethods: [
+  payments: [
     {
       first: 'Zac',
       last: 'Arellano',
@@ -37,38 +37,6 @@ const user_and_payment_methods = {
       expiration: '12/20',
       csc: '789'
     },
-    // {
-    //   first: 'Zac',
-    //   last: 'Arellano',
-    //   type: 'Visa',
-    //   cc: '5712 2811 8426 4795',
-    //   expiration: '12/20',
-    //   csc: '789'
-    // },
-    // {
-    //   first: 'Zac',
-    //   last: 'Arellano',
-    //   type: 'Amex',
-    //   cc: '5468 2383 1164 6348',
-    //   expiration: '12/20',
-    //   csc: '789'
-    // },
-    // {
-    //   first: 'Zac',
-    //   last: 'Arellano',
-    //   type: 'Mastercard',
-    //   cc: '3086 7312 5618 9752',
-    //   expiration: '12/20',
-    //   csc: '789'
-    // },
-    // {
-    //   first: 'Zac',
-    //   last: 'Arellano',
-    //   type: 'Discover',
-    //   cc: '8934 5908 1123 2547',
-    //   expiration: '12/20',
-    //   csc: '789'
-    // }
   ]
 }
 
