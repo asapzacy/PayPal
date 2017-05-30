@@ -9,12 +9,10 @@ import styles from './PayWith.css'
 const PayWith = ({ price, preferredPayment, isSwitching, switchPreferred }) => (
   <section className={styles.container}>
     <h2 className={styles.text}>{'Pay with:'}</h2>
-    <Link to='/' className={styles.info}>
-      <span onClick={switchPreferred}>
-        {'change'}
-        { isSwitching ? <Close /> : <Arrow /> }
-      </span>
-    </Link>
+    <span onClick={switchPreferred}>
+      {'change'}
+      { isSwitching ? <Close /> : <Arrow /> }
+    </span>
     { preferredPayment && <Payment {...preferredPayment} isPreferred /> }
     <Total price={price} />
   </section>

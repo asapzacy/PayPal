@@ -62,8 +62,8 @@ class MainContainer extends Component {
   updatePreferred(id) {
     this.setState({
       preferredId: id,
+      isSwitching: false
     })
-    this.switchPreferred()
   }
   updatePayments(newPayment, index) {
     const paymentsCopy = [ ...this.state.payments ]

@@ -2,6 +2,8 @@
 /* -------  Loading  ------- */
 .container {
   padding-top:25%;
+  flex-basis:100%;
+  flex-shrink:0;
   composes:leftSide from 'styles/shared.css'
 }
 .svgContainer {

@@ -9,25 +9,7 @@ const app = express()
 app.use(compression())
 app.use(cors())
 
-// const createCcNumber = () => {
-//   let cc = ''
-//   for (let i = 1; i <= 12; i++) {
-//     str += Math.floor(Math.random() * 10)
-//     if (i % 4 === 0) {
-//       str += ' '
-//     }
-//   }
-//   return str
-// }
-//
-// const createPayment = () = {
-//   return {
-//     first: 'Zac',
-//     last: 'Arellano',
-//     type: createCC()
-//   }
-// }
-//
+//  helper functions
 const randomCcNumber = () => {
   let cc = ''
   for (let i = 1; i <= 16; i++) {
@@ -42,12 +24,10 @@ const randomCcType = () => {
   const types = ['Amex', 'Discover', 'Mastercard', 'Visa']
   return types[Math.floor(Math.random() * types.length)]
 }
-
 const createUserInfo = () => ({
   name: 'Zac',
   price: 88.08
 })
-
 const createPayments = () => {
   const payments = []
   for (let i = 0; i < 8; i++) {

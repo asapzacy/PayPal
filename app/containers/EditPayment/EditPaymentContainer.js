@@ -5,7 +5,7 @@ class EditPaymentContainer extends Component {
   constructor() {
     super()
     this.state = {
-      isPaymentSaved: false,
+      isSaved: false,
       first: '',
       last: '',
       type: '',
@@ -26,7 +26,7 @@ class EditPaymentContainer extends Component {
   checkIfPaymentInfo() {
     const paymentId = parseInt(this.props.params.paymentId)
     if (Number.isInteger(paymentId)) {
-      const paymentInfo = this.props.paymentMethods[paymentId]
+      const paymentInfo = this.props.payments[paymentId]
       if (paymentInfo) {
         this.fillInPaymentInfo(paymentInfo)
       }
@@ -43,9 +43,9 @@ class EditPaymentContainer extends Component {
       csc: paymentInfo.csc
     })
   }
-  savePaymentInfo(index, newPayment) {
-    this.props.updatePaymentMethods(index, newPayment)
-    this.setState({ isPaymentSaved: true })
+  savePaymentInfo(newPayment, index) {
+    this.props.updatePayments(newPayment, index)
+    this.setState({ isSaved: true })
   }
   updatePaymentInfo(cardInfo, event) {
     this.setState({ [cardInfo]: event.target.value })

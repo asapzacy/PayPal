@@ -1,6 +1,7 @@
 
 /* -------  Wallet  ------- */
 .container {
+  padding:0;
   composes:leftSide from 'styles/shared.css';
 }
 .menu {
@@ -18,6 +19,8 @@
 }
 .payments { }
 .list { }
+
+
 /*.updatePaymentsContainer {
   width:100%;
   margin-top:1em;

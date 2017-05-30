@@ -14,3 +14,6 @@
   text-align:right;
   cursor:pointer;
 }
+.container li {
+  border-bottom:0;
+}

@@ -6,14 +6,14 @@ import Add from 'react-icons/lib/io/ios-plus-empty'
 import Arrow from 'react-icons/lib/io/ios-arrow-right'
 import styles from './Wallet.css'
 
-const Wallet = ({ payments, preferredId, updatePreferred, isSwitching }) => (
-  <section className={styles.container}>
+const Wallet = ({ hasLoaded, payments, preferredId, updatePreferred, isSwitching }) => (
+  <section className={styles.container} style={{borderRight:hasLoaded && '1px solid #bdbdbd'}}>
     <CheckoutHeader text={'Wallet'}>
       <menu className={styles.menu}>
         <Link to={'/user/addPayment'} className={styles.link}>
           <Add />{'Add'}
         </Link>
-        <Link to={`./user/managePayment/${preferredId}`} className={styles.link}>
+        <Link to={`/user/managePayment/${preferredId}`} className={styles.link}>
           {'Manage'}<Arrow />
         </Link>
       </menu>

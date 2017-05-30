@@ -5,7 +5,7 @@ import { editPaymentContainer, paymentInfoContainer, creditCardsContainer,
 
 const EditPayment = (props) => {
   const { preferredId, updatePaymentInfo, updatePaymentCard,
-    savePaymentInfo, isPaymentSaved, payments } = props
+    savePaymentInfo, isSaved, payments } = props
   const newPaymentMethod = {
     first: props.first,
     last: props.last,
@@ -49,8 +49,8 @@ const EditPayment = (props) => {
         <Input text={'cc'} value={newPaymentMethod.cc} updatePaymentInfo={updatePaymentInfo} iconType={newPaymentMethod.type} />
         <Input text={'expiration'} value={newPaymentMethod.expiration} updatePaymentInfo={updatePaymentInfo} />
         <Input text={'csc'} value={newPaymentMethod.csc} updatePaymentInfo={updatePaymentInfo} iconType={'csc'} />
-        <button className={editPaymentButton} onClick={(e) => savePaymentInfo(newPaymentIndex, newPaymentMethod)}>
-          { isPaymentSaved ? 'Saved' : buttonText }
+        <button className={editPaymentButton} onClick={(e) => savePaymentInfo(newPaymentMethod, newPaymentIndex)}>
+          { isSaved ? 'Saved' : buttonText }
         </button>
       </main>
     </section>

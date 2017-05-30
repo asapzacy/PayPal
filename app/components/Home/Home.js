@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router'
 import styles from './Home.css'
 
-const Home = ({ loadSampleData }) => (
-  <section className={styles.container}>
+const Home = ({ hasLoaded, loadSampleData }) => (
+  <section className={styles.container} style={{flexBasis:!hasLoaded && '100%'}}>
     <header className={styles.header}>
       <h1 className={styles.hi}>{'Hi.. '}</h1>
       <h2 className={styles.message}>
