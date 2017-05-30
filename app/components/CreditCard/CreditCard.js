@@ -1,13 +1,12 @@
 import React from 'react'
-import { creditCardContainer, creditCard } from './styles.css'
+import styles from './CreditCard.css'
 
-const CreditCard = ({ card, isActive, updatePaymentCard }) => (
-  <span className={creditCardContainer}>
+const CreditCard = ({ card, isActive, updateCard }) => (
+  <span className={styles.container}>
     <img
-      className={creditCard}
-      style={{filter:isActive && 'none'}}
+      className={isActive ? styles.ccActive : styles.cc}
       src={`/assets/icons/${card.toLowerCase()}.svg`}
-      onClick={() => updatePaymentCard(card)}
+      onClick={() => updateCard(card)}
     />
   </span>
 )

@@ -13,9 +13,10 @@
 .link {
   display:flex;
   align-items:center;
-  color:#3c8ac7;
-  font-weight:500;
-  line-height:1;
+  composes:link from 'styles/shared.css'
+}
+.link svg {
+  
 }
 .payments { }
 .list { }

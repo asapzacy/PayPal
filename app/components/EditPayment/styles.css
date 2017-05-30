@@ -18,5 +18,7 @@
   width:100%;
 }
 .editPaymentButton {
-
+  width:50%;
+  margin:3.33em auto;
+  composes:btn from 'styles/shared.css'
 }

@@ -60,10 +60,12 @@ class MainContainer extends Component {
     })
   }
   updatePreferred(id) {
-    this.setState({
-      preferredId: id,
-      isSwitching: false
-    })
+    if (this.state.isSwitching) {
+      this.setState({
+        preferredId: id,
+        isSwitching: false
+      })      
+    }
   }
   updatePayments(newPayment, index) {
     const paymentsCopy = [ ...this.state.payments ]

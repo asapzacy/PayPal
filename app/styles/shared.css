@@ -8,6 +8,22 @@
   flex-basis:40%;
   border-top:1px solid #bdbdbd;
 }
+.link {
+  color:#3c8ac7;
+  font-weight:500;
+  line-height:1;
+}
+.btn {
+  font-size:1.1em;
+  font-weight:300;
+  padding:0.6em 1.2em;
+  border-radius:2px;
+  border:1px solid #070707;
+  transition:background 0.33s;
+}
+.btn:hover {
+  background:#f5f5f5;
+}
 
 @media only screen and (min-width:667px) {
   .leftSide {

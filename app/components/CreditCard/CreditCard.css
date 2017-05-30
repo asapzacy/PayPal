@@ -1,22 +1,19 @@
 
 /* -------  CreditCard  ------- */
-.creditCardContainer {
+.container {
   line-height:0;
   margin:0 5%;
 }
-
-.creditCard {
+.cc {
   padding:4%;
   cursor:pointer;
   filter:grayscale(100%);
   transition:filter 0.66s;
 }
-
-.creditCardActive {
+.ccActive {
   filter:grayscale(0);
-  composes:creditCard;
+  composes:cc;
 }
-
-.creditCard:hover {
+.cc:hover {
   filter:grayscale(0);
 }

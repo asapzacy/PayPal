@@ -11,7 +11,9 @@ const Input = ({ text, value, updatePaymentInfo, iconType }) => (
       spellCheck={false}
       placeholder={text}
     />
-    { iconType && <span className={inputIcon} style={{backgroundImage:`url(http://localhost:8080/assets/icons/${iconType}.svg)`}}></span>}
+    { iconType &&
+      <span className={inputIcon} style={{backgroundImage:`url(http://localhost:8080/assets/icons/${iconType}.svg)`}}></span>
+    }
     <span className={inputUnderline}></span>
   </div>
 )

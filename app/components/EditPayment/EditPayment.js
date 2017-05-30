@@ -1,10 +1,10 @@
 import React from 'react'
-import { CheckoutHeader, CreditCard, Input } from 'components'
+import { Title, CreditCard, Input } from 'components'
 import { editPaymentContainer, paymentInfoContainer, creditCardsContainer,
   editPaymentButton } from './styles.css'
 
 const EditPayment = (props) => {
-  const { preferredId, updatePaymentInfo, updatePaymentCard,
+  const { preferredId, updatePaymentInfo, updateCard,
     savePaymentInfo, isSaved, payments } = props
   const newPaymentMethod = {
     first: props.first,
@@ -32,7 +32,7 @@ const EditPayment = (props) => {
   const creditCards = ['Visa', 'Amex', 'Mastercard', 'Discover']
   return (
     <section className={editPaymentContainer}>
-      <CheckoutHeader text={checkoutHeaderText} isNotHomePage />
+      <Title title={checkoutHeaderText} notHomePage />
       <main className={paymentInfoContainer}>
         <Input text={'first'} value={newPaymentMethod.first} updatePaymentInfo={updatePaymentInfo} />
         <Input text={'last'} value={newPaymentMethod.last} updatePaymentInfo={updatePaymentInfo} />
@@ -41,7 +41,7 @@ const EditPayment = (props) => {
             <CreditCard
               card={el}
               isActive={newPaymentMethod.type === el}
-              updatePaymentCard={() => updatePaymentCard(el)}
+              updateCard={() => updateCard(el)}
               key={i}
             />)
           )}

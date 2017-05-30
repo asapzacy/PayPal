@@ -14,7 +14,7 @@ class EditPaymentContainer extends Component {
       csc: ''
     }
     this.updatePaymentInfo = this.updatePaymentInfo.bind(this)
-    this.updatePaymentCard = this.updatePaymentCard.bind(this)
+    this.updateCard = this.updateCard.bind(this)
     this.savePaymentInfo = this.savePaymentInfo.bind(this)
   }
   componentDidMount() {
@@ -50,7 +50,7 @@ class EditPaymentContainer extends Component {
   updatePaymentInfo(cardInfo, event) {
     this.setState({ [cardInfo]: event.target.value })
   }
-  updatePaymentCard(card) {
+  updateCard(card) {
     this.setState({ type: card })
   }
   render() {
@@ -59,7 +59,7 @@ class EditPaymentContainer extends Component {
         {...this.state}
         {...this.props}
         updatePaymentInfo={this.updatePaymentInfo}
-        updatePaymentCard={this.updatePaymentCard}
+        updateCard={this.updateCard}
         savePaymentInfo={this.savePaymentInfo}
       />
     )

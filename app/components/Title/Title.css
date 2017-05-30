@@ -1,6 +1,6 @@
 
-/* -------  CheckoutHeader  ------- */
-.checkoutHeaderContainer {
+/* -------  Title  ------- */
+.container {
   text-align:center;
   border-bottom:1px solid #bdbdbd;
   display:flex;
@@ -9,11 +9,11 @@
   flex-wrap:wrap;
   padding:1em 0.5em;
 }
-.checkoutHeaderText {
+.title {
   flex:1;
   font-size:1.2em;
 }
-.checkoutHeaderIcon {
+.icon {
   font-size:1.2em;
   line-height:0;
   width:1.6em;

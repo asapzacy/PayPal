@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router'
 import { Payment } from 'components'
 import Total from './Total'
-import Arrow from 'react-icons/lib/io/ios-arrow-right'
-import Close from 'react-icons/lib/io/ios-close-empty'
+import Arrow from 'react-icons/lib/io/ios-arrow-forward'
+import Close from 'react-icons/lib/io/android-close'
 import styles from './PayWith.css'
 
 const PayWith = ({ price, preferredPayment, isSwitching, switchPreferred }) => (
   <section className={styles.container}>
     <h2 className={styles.text}>{'Pay with:'}</h2>
-    <span onClick={switchPreferred}>
+    <span className={styles.change} onClick={switchPreferred}>
       {'change'}
       { isSwitching ? <Close /> : <Arrow /> }
     </span>

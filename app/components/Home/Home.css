@@ -29,13 +29,5 @@
 }
 .btn {
   margin-top:5em;
-  font-size:1.1em;
-  font-weight:300;
-  padding:0.6em 1.2em;
-  border-radius:2px;
-  border:1px solid #070707;
-  transition:background 0.33s;
-}
-.btn:hover {
-  background:#f5f5f5;
+  composes:btn from 'styles/shared.css'
 }
