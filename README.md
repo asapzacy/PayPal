@@ -1,5 +1,5 @@
 # PayPal
-![PayPal preview](https://raw.githubusercontent.com/zacarellano/PayPal/master/dist/assets/img/other/paypal_preview.png)
+![PayPal preview](https://zac.codes/assets/img/projects/PayPal_preview-xlarge.jpg)
 
 A coding challenge to create a sample PayPal checkout widget. You can add and manage payment methods used for checkout.
 
